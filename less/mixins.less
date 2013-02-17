@@ -1,0 +1,29 @@
+.baseline( @font-size, @font-family: sans-serif ) {
+	font-family: @sans-serif;
+	font-size: @base-font-size;
+	line-height: @base-line-height;
+	padding-bottom: 0;
+	margin: 0;
+}
+
+.baseline( @font-size, @font-family: sans-serif ) when( @font-size > @base-font-size ) {
+	@descender-ratio: "@{font-family}-descender-ratio";
+	@line-height: ceil( @font-size / @base-line-height ) * @base-line-height;
+	@top: round( (@line-height - @font-size) / 2 + @font-size * @@descender-ratio ) - @base-bottom;
+	@bottom: @base-line-height - @top;
+
+	font-family: @@font-family;
+	font-size: @font-size;
+	line-height: @line-height;
+
+	.baseline-position( @bottom, @top );
+}
+
+.baseline-position( @bottom, @top ) when( @top < 0 ) {
+	margin-top: @top;
+	padding: 0 0 (@bottom - @base-line-height);
+}
+
+.baseline-position( @bottom, @top ) when( @top >= 0 ) {
+	padding: @top 0 @bottom;
+}

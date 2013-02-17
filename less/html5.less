@@ -1,0 +1,97 @@
+a {
+	color: #06c;
+}
+
+body {
+	padding: 0 (@base-line-height * (4/3));
+}
+
+article,
+body,
+section {
+	margin: @base-line-height auto (@base-line-height * 2);
+	width: round( @content-width );
+
+	article,
+	section {
+		article,
+		section {
+			h1 {
+				.baseline( @h3-font-size );
+			}
+
+			h2 {
+				.baseline( @h4-font-size );
+			}
+
+			h3 {
+				.baseline( @base-font-size );
+			}
+		}
+
+		h1 {
+			.baseline( @h2-font-size );
+		}
+
+		h2 {
+			.baseline( @h3-font-size );
+		}
+
+		h3 {
+			.baseline( @h4-font-size );
+		}
+
+		h4 {
+			.baseline( @base-font-size );
+		}
+	}
+
+	h1 {
+		.baseline( @h1-font-size );
+	}
+
+	h2 {
+		.baseline( @h2-font-size );
+	}
+
+	h3 {
+		.baseline( @h3-font-size );
+	}
+
+	h4 {
+		.baseline( @h4-font-size );
+	}
+}
+
+nav {
+	ul {
+		padding: 0;
+
+		li {
+			display: inline-block;
+
+			&::after {
+				content: ' ·';
+			}
+
+			&:last-child::after {
+				content: '';
+			}
+		}
+	}
+}
+
+p {
+	.baseline( @base-font-size );
+	margin: @base-line-height 0;
+	padding-bottom: 0;
+}
+
+ul {
+	margin: 0;
+
+	li {
+		.baseline( @base-font-size );
+		padding-bottom: 0;
+	}
+}

@@ -24,6 +24,10 @@
 	padding: 0 0 (@bottom - @base-line-height);
 }
 
-.baseline-position( @bottom, @top ) when( @top >= 0 ) {
+.baseline-position( @bottom, @top ) when( @top = 0 ) {
+	padding: @top 0 0;
+}
+
+.baseline-position( @bottom, @top ) when( @top > 0 ) {
 	padding: @top 0 @bottom;
 }

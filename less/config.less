@@ -1,0 +1,11 @@
+@ratio: 1.61803398875; // golden ratio
+
+// set to the smallest font-size in use
+@base-font-size: 13px;
+
+// this is equal to the vertical grid's height
+@base-line-height: round( @base-font-size * @ratio );
+
+/* ratio of the font's height dedicated to the descender
+ * you probably don't want to touch this */
+@descender-ratio: 1/7;

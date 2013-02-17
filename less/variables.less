@@ -1,14 +1,11 @@
-@ratio: 1.61803398875;
-@sans-serif: "Helvetica Neue", Helvetica, sans-serif;
-@serif: Georgia, Times, "Times New Roman", serif;
-@descender-ratio: 1/7;
+@ratio: 1.61803398875; // golden ratio
 
+// set to the smallest font-size in use
 @base-font-size: 13px;
-@base-line-height: round( @base-font-size * @ratio );
-@base-bottom: round( (@base-line-height - @base-font-size) / 2 ) + 1;
 
-@h1-font-size: round( @base-font-size * 3 );
-@h2-font-size: round( @base-font-size * 2 );
-@h3-font-size: round( @base-font-size * 1.5 );
-@h4-font-size: round( @base-font-size * 1.2 );
-@content-width: round( @base-font-size * 47 ); /* 47 = @ratio ^ 8 */
+// this is equal to the vertical grid's height
+@base-line-height: round( @base-font-size * @ratio );
+
+/* ratio of the font's height dedicated to the descender
+ * you probably don't want to touch this */
+@descender-ratio: 1/7;

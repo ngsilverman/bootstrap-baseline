@@ -2,10 +2,45 @@
 <meta charset="UTF-8"/>
 <link rel="stylesheet" href="http://basehold.it/20/777777">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<style>body::after{ top: -3px }</style>
 <link href="less/baseline.less" rel="stylesheet/less" type="text/css"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>
 <title>Baseline Bootstrap</title>
+
+<style>
+	body { padding-top: 40px }
+	body::after{ top: -3px }
+</style>
+
+<script>
+$( document ).ready(function() {
+	var baselineStylesheet = document.styleSheets[2],
+		gridStylesheet = document.styleSheets[0];
+
+	gridStylesheet.disabled = true;
+
+	$("#toggle-baseline").click(function() {
+		$( this ).parent().toggleClass("active");
+		baselineStylesheet.disabled = !baselineStylesheet.disabled;
+	});
+
+	$("#toggle-grid").click(function() {
+		$( this ).parent().toggleClass("active");
+		gridStylesheet.disabled = !gridStylesheet.disabled;
+	});
+});
+</script>
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<ul class="nav">
+				<li class="active"><a href="#" id="toggle-baseline">Toggle Baseline</a></li>
+				<li><a href="#" id="toggle-grid">Toggle vertical grid</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
 
 <div class="container">
 	<div class="row">
@@ -13,7 +48,7 @@
 			<div class="page-header">
 				<h1>
 					Baseline Bootstrap
-					<small>Vertical Rythm for your Bootstraps</small>
+					<small>Rythm for your Bootstrap	Content</small>
 				</h1>
 			</div>
 			<blockquote>

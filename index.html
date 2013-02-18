@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="UTF-8"/>
-<link rel="stylesheet" href="http://basehold.it/20/777777">
+<link rel="stylesheet" href="http://basehold.it/20">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="less/baseline.less" rel="stylesheet/less" type="text/css"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -9,7 +9,8 @@
 
 <style>
 	body { padding-top: 40px }
-	body::after{ top: -3px }
+	body::after{ top: 35px }
+	.nav li { cursor: pointer }
 </style>
 
 <script>
@@ -35,8 +36,8 @@ $( document ).ready(function() {
 	<div class="navbar-inner">
 		<div class="container">
 			<ul class="nav">
-				<li class="active"><a href="#" id="toggle-baseline">Toggle Baseline</a></li>
-				<li><a href="#" id="toggle-grid">Toggle vertical grid</a></li>
+				<li class="active"><a id="toggle-baseline">Toggle Baseline</a></li>
+				<li><a id="toggle-grid">Toggle vertical grid</a></li>
 			</ul>
 		</div>
 	</div>
@@ -101,11 +102,11 @@ $( document ).ready(function() {
 			libero. Nullam nulla sem, porta vel porta a,
 			commodo et sem. Nulla feugiat justo semper felis
 			dictum id luctus quam mollis.</p>
-			<p><small>Phasellus eu lorem vel risus fringilla mollis.
+			<!--<p><small>Phasellus eu lorem vel risus fringilla mollis.
 			Maecenas vehicula fringilla nibh, non porta nisl
 			euismod nec. Proin in felis id turpis mattis ornare
 			non eget velit. In lacinia feugiat dui vitae
-			elementum.</small></p>
+			elementum.</small></p>-->
 		</div>
 
 		<div class="span4">
@@ -115,6 +116,65 @@ $( document ).ready(function() {
 			ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			Fusce egestas adipiscing dui eu sodales. Proin suscipit scelerisque
 			rhoncus. Proin sit amet mi justo.</p>
+		</div>
+
+		<div class="span4">
+			<ul>
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipiscing elit</li>
+				<li>Integer molestie lorem at massa</li>
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipiscing elit</li>
+				<li>Integer molestie lorem at massa</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<h3>Code</h3>
+			<pre>&lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;p&gt;And here...&lt;/p&gt;</pre>
+		</div>
+		<div class="span4">
+			<h3>Tables</h3>
+			<table class="table table-condensed">
+				<tr>
+					<th>#</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Jacob</td>
+					<td>Thornton</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Larry</td>
+					<td>the Bird</td>
+				</tr>
+			</table>
+		</div>
+		<div class="span4">
+			<h3>Forms</h3>
+			<form>
+				<fieldset>
+					<legend>Legend</legend>
+					<label>Label name</label>
+					<input type="text" placeholder="Type something…"/>
+					<span class="help-block">Example block-level help text here.</span>
+					<label class="checkbox">
+						<input type="checkbox"> Check me out
+					</label>
+					<button type="submit" class="btn">Submit</button>
+				</fieldset>
+			</form>
 		</div>
 	</div>
 </div>

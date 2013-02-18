@@ -1,28 +1,26 @@
 @baseBottom: round( (@baseLineHeight - @minFontSize) / 2 + @minFontSize * @descenderRatio );
 
-.baseline( @fontSize ) {
+.baseline( @fontSize, @topPadding: 0, @bottomPadding: 0 ) {
 	@lineHeight: ceil( @fontSize / @baseLineHeight ) * @baseLineHeight;
 	@top: round( (@lineHeight - @fontSize) / 2 + @fontSize * @descenderRatio ) - @baseBottom;
-	@bottom: @baseLineHeight - @top;
+
+	// @bottom is a module of @baseLineHeight
+	@prebottom: (@baseLineHeight - @top) / @baseLineHeight;
+	@bottom: round( (@prebottom - floor(@prebottom)) * @baseLineHeight );
 
 	font-size: @fontSize;
 	line-height: @lineHeight;
 
-	.baseline-position( @bottom, @top );
+	.baseline-position( @top + @topPadding, @bottom + @bottomPadding );
 }
 
-.baseline-position( @bottom, @top ) when( @top < 0 ) {
+.baseline-position( @top, @bottom ) when( @top < 0 ) {
 	margin-top: @top;
-	padding-bottom: @bottom - @baseLineHeight;
+	padding-bottom: @bottom;
 	padding-top: 0;
 }
 
-.baseline-position( @bottom, @top ) when( @top = 0 ) {
-	padding-bottom: 0;
-	padding-top: @top;
-}
-
-.baseline-position( @bottom, @top ) when( @top > 0 ) {
+.baseline-position( @top, @bottom ) when( @top >= 0 ) {
 	padding-bottom: @bottom;
 	padding-top: @top;
 }

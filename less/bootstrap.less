@@ -1,3 +1,14 @@
+dt, dd, label,
+li, p {
+	.baseline( @baseFontSize )
+}
+
+legend, p, pre,
+ol, ul,
+.help-block {
+	margin-bottom: @baseLineHeight
+}
+
 .page-header {
 	margin: 0 0 (@baseLineHeight - 1); // remove 1 because of the border
 	padding-bottom: @baseLineHeight;
@@ -28,12 +39,27 @@ blockquote {
 
 em { line-height: 1 }
 
-p {
-	.baseline( @baseFontSize );
-	margin-bottom: @baseLineHeight;
-}
 .lead { .baseline( @baseFontSize * 1.2 ) }
 
 small {
 	.baseline( @baseFontSize * .85 );
+}
+
+dl { margin: @baseLineHeight 0 }
+
+pre, .table th, .table td {
+	.baseline( @baseFontSize, @baseLineHeight - 1, @baseLineHeight - 1 );
+}
+
+legend {
+	.baseline( @baseFontSize * 1.4 );
+}
+
+label {
+	margin-bottom: 0;
+}
+
+input, .btn {
+	.baseline( @baseFontSize, -1px, -1px );
+	margin-bottom: 0;
 }

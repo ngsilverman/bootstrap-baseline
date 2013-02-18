@@ -59,7 +59,15 @@ label {
 	margin-bottom: 0;
 }
 
-input, .btn {
+input[type=text] {
+	.baseline( @baseFontSize, -2 );
+	height: @baseLineHeight - 2;
+
+	// for some reason there's too much spacing
+	margin-bottom: @baseLineHeight - 2;
+}
+
+.btn {
 	.baseline( @baseFontSize, -1px, -1px );
 	margin-bottom: 0;
 }

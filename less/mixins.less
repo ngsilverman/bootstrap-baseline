@@ -1,4 +1,4 @@
-@baseBottom: round( (@baseLineHeight - @baseFontSize) / 2 + @baseFontSize * @descenderRatio );
+@baseBottom: round( (@baseLineHeight - @minFontSize) / 2 + @minFontSize * @descenderRatio );
 
 .baseline( @fontSize ) {
 	@lineHeight: ceil( @fontSize / @baseLineHeight ) * @baseLineHeight;

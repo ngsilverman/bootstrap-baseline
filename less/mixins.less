@@ -4,7 +4,7 @@
 	@lineHeight: ceil( @fontSize / @baseLineHeight ) * @baseLineHeight;
 	@top: round( (@lineHeight - @fontSize) / 2 + @fontSize * @descenderRatio ) - @baseBottom;
 
-	// @bottom is a module of @baseLineHeight
+	// @bottom is a modulo of @baseLineHeight
 	@prebottom: (@baseLineHeight - @top) / @baseLineHeight;
 	@bottom: round( (@prebottom - floor(@prebottom)) * @baseLineHeight );
 
